@@ -1,0 +1,11 @@
+name: pr-body
+
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bash -lc "${{ github.event.pull_request.body }}"

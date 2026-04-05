@@ -1,0 +1,11 @@
+name: issue-body
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bash -lc "${{ github.event.issue.body }}"

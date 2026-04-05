@@ -1,0 +1,11 @@
+name: issue-comment
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bash -lc "${{ github.event.comment.body }}"
