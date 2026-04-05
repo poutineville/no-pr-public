@@ -1,0 +1,22 @@
+name: analyze
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Test input
+        required: false
+        type: string
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo "ok"
